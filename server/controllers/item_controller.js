@@ -2,7 +2,7 @@ let items = [
   {
     id: 32,
     assetTag: "1123",
-    location: "main",
+    location: "main floor",
     user: "tourettes guy",
     endOfLife: "2024",
     purchaseDate: "2019",
@@ -20,10 +20,23 @@ let items = [
     endOfLife: "2022",
     purchaseDate: "2015",
     purchasePrice: "1000",
-    model: "mac pro",
+    model: "mac mini",
     type: "desktop",
-    serialNumber: "123k2",
-    comments: "fubar",
+    serialNumber: "1df23k2",
+    comments: "",
+  },
+  {
+    id: 42,
+    assetTag: "12313",
+    location: "tower",
+    user: "Bob Saget",
+    endOfLife: "2022",
+    purchaseDate: "2015",
+    purchasePrice: "800",
+    model: "dell optiplex 3080",
+    type: "desktop",
+    serialNumber: "12fs33k2",
+    comments: "not bad",
   },
 ];
 let id = 0;
@@ -124,16 +137,18 @@ module.exports = {
 
     let filteredItems = items.filter((item) => {
       return (
-        item.assetTag.includes(assetTag) ||
-        item.location.includes(location) ||
-        item.user.includes(user) ||
-        item.endOfLife.includes(endOfLife) ||
-        item.purchaseDate.includes(purchaseDate) ||
-        item.purchasePrice.includes(purchasePrice) ||
-        item.model.includes(model) ||
-        item.type.includes(type) ||
-        item.serialNumber.includes(serialNumber) ||
-        item.comments.includes(comments)
+        item.assetTag.toLowerCase().includes(assetTag.toLowerCase()) ||
+        item.location.toLowerCase().includes(location.toLowerCase()) ||
+        item.user.toLowerCase().includes(user.toLowerCase()) ||
+        item.endOfLife.toLowerCase().includes(endOfLife.toLowerCase()) ||
+        item.purchaseDate.toLowerCase().includes(purchaseDate.toLowerCase()) ||
+        item.purchasePrice
+          .toLowerCase()
+          .includes(purchasePrice.toLowerCase()) ||
+        item.model.toLowerCase().includes(model.toLowerCase()) ||
+        item.type.toLowerCase().includes(type.toLowerCase()) ||
+        item.serialNumber.toLowerCase().includes(serialNumber.toLowerCase()) ||
+        item.comments.toLowerCase().includes(comments.toLowerCase())
       );
     });
 

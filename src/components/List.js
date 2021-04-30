@@ -9,8 +9,16 @@ class List extends Component {
   render() {
     return (
       <div>
-        list here
-        <Item />
+        {this.props.items.map((item) => {
+          return (
+            <Item
+              key={item.id}
+              item={item}
+              handleDelete={this.props.handleDelete}
+              handleEditItem={this.props.handleEditItem}
+            />
+          );
+        })}
       </div>
     );
   }
