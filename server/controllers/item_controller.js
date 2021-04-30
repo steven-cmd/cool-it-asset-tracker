@@ -122,34 +122,19 @@ module.exports = {
     res.status(200).send(items);
   },
   filter: (req, res) => {
-    const {
-      assetTag,
-      location,
-      user,
-      endOfLife,
-      purchaseDate,
-      purchasePrice,
-      model,
-      type,
-      serialNumber,
-      comments,
-    } = req.body;
-
     let filteredItems = items.filter((item) => {
-      return (
-        item.assetTag.toLowerCase().includes(assetTag.toLowerCase()) ||
-        item.location.toLowerCase().includes(location.toLowerCase()) ||
-        item.user.toLowerCase().includes(user.toLowerCase()) ||
-        item.endOfLife.toLowerCase().includes(endOfLife.toLowerCase()) ||
-        item.purchaseDate.toLowerCase().includes(purchaseDate.toLowerCase()) ||
-        item.purchasePrice
-          .toLowerCase()
-          .includes(purchasePrice.toLowerCase()) ||
-        item.model.toLowerCase().includes(model.toLowerCase()) ||
-        item.type.toLowerCase().includes(type.toLowerCase()) ||
-        item.serialNumber.toLowerCase().includes(serialNumber.toLowerCase()) ||
-        item.comments.toLowerCase().includes(comments.toLowerCase())
-      );
+      let returnBool = true;
+      for (property in req.body) {
+        if (
+          req.body[property] &&
+          !item[property]
+            .toLowerCase()
+            .includes(req.body[property].toLowerCase())
+        ) {
+          returnBool = false;
+        }
+      }
+      return returnBool;
     });
 
     res.status(200).send(filteredItems);

@@ -15,6 +15,8 @@ class App extends Component {
 
     this.handleDeleteItem = this.handleDeleteItem.bind(this);
     this.handleEditItem = this.handleEditItem.bind(this);
+    this.handleAddItem = this.handleAddItem.bind(this);
+    this.handleFind = this.handleFind.bind(this);
   }
 
   componentDidMount() {
@@ -40,11 +42,28 @@ class App extends Component {
       .catch((error) => console.log(error));
   }
 
+  handleAddItem(item) {
+    axios
+      .post("/api/items", item)
+      .then((res) => this.setState({ items: res.data }))
+      .catch((error) => console.log(error));
+  }
+
+  handleFind(item) {
+    axios
+      .post("/api/filteredItems", item)
+      .then((res) => this.setState({ items: res.data }))
+      .catch((error) => console.log(error));
+  }
+
   render() {
     return (
       <div>
         <Header />
-        <ControlPanel />
+        <ControlPanel
+          handleAddItem={this.handleAddItem}
+          handleFind={this.handleFind}
+        />
         <List
           items={this.state.items}
           handleDelete={this.handleDeleteItem}
