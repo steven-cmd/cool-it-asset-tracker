@@ -4,12 +4,16 @@
 }
 
 html { 
-  background: url(background.jpg) no-repeat center center fixed; 
+  background-color: #008080;
   background-size: cover;
 }
 
 p{
   font-family:"MS Sans Serif";
+}
+
+h1{
+  margin-left: 20px;
 }
 
 button, input{
@@ -23,6 +27,8 @@ button, input{
 
 button {
   background:#C0C0C0;
+  padding-left: 5px;
+  padding-right: 5px;
 
 }
 
@@ -39,7 +45,7 @@ header{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: #64CFF7;
+  color: #000000;
   flex-wrap: wrap;
   margin-bottom: 3px;
 }
@@ -52,12 +58,16 @@ header{
 }
 
 .control-panel{
-  background-color: #FF68A8;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
   align-items: center;
   width: 95%;
+  background:#c0c0c0;
+  border-width:1px;
+  border-color:#FFFFFF #808080 #808080 #FFFFFF;
+  border-style:solid;
+  padding:1px;
 }
 
 .control-panel > * {
@@ -70,17 +80,9 @@ header{
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  
 }
 
-.music-player{
- width: 200px; 
- height: 42px;
- border-width:1px;
- border-style:solid;
- border-color:#FFFFFF #808080 #808080 #FFFFFF;
- margin-right: 3px;
- margin-left: 80px;
-}
 
 .list {
   display: flex;
@@ -106,7 +108,7 @@ header{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 24px;
+  height: 20px;
   background:#000080;
   color:#FFF;
   font-family:Tahoma;
@@ -114,25 +116,44 @@ header{
 }
 
 .item-title button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-weight: bold;
-  font-size: 9px;
-  margin-bottom: 4px;
-  margin-right: 4px;
+  margin: 1px;
+  width: 16px;
+  height: 16px;
 }
 
-.item-title .edit-button{
-  font-size: 7.8px;
+.item-title .edit-button {
+  font-size: 11px;
 }
+
+
+.button-container {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
 
 .edit-item{
   display: flex;
   flex-direction: column;
 }
 
-.edit-item p {
+.edit-item span {
   margin-left: 4px;
 }
 
+
 .edit-item button {
+  margin: 10px;
   align-self: center;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#title-number{
+  color: white;
 }

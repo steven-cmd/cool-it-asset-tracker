@@ -29,7 +29,7 @@ class Item extends Component {
           <div>
             <div className="item-title">
               <p>Asset Tag: {this.props.item.assetTag}</p>
-              <div>
+              <div className="button-container">
                 <button
                   className="edit-button"
                   onClick={() => {
