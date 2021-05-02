@@ -32,7 +32,10 @@ class EditItem extends Component {
 
   render() {
     return (
-      <div className="item">
+      <div className="edit-item">
+        <div className="item-title">
+          <p>Asset Tag: {this.state.assetTag} </p>
+        </div>
         <div>
           <span>Asset Tag: </span>
           <input
@@ -132,7 +135,7 @@ class EditItem extends Component {
           ></input>
         </div>
 
-        <button onClick={() => this.handleSave()}>save</button>
+        <button onClick={() => this.handleSave()}>Save</button>
       </div>
     );
   }

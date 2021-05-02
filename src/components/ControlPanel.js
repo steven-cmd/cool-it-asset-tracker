@@ -42,7 +42,7 @@ class ControlPanel extends Component {
 
   render() {
     return (
-      <div>
+      <div className="control-panel">
         <input
           placeholder="Asset Tag"
           value={this.state.assetTag}
@@ -103,17 +103,21 @@ class ControlPanel extends Component {
           name="comments"
           onChange={(e) => this.handleChange(e.target.value, e.target.name)}
         ></input>
-        <button onClick={() => this.props.handleAddItem(this.state)}>
-          Add
-        </button>
-        <button onClick={() => this.props.handleFind(this.state)}>Find</button>
-        <button
-          onClick={() => {
-            this.handleClear();
-          }}
-        >
-          Clear
-        </button>
+        <div id="control-buttons">
+          <button onClick={() => this.props.handleAddItem(this.state)}>
+            Add
+          </button>
+          <button onClick={() => this.props.handleFind(this.state)}>
+            Find
+          </button>
+          <button
+            onClick={() => {
+              this.handleClear();
+            }}
+          >
+            Clear
+          </button>
+        </div>
       </div>
     );
   }

@@ -1,3 +1,138 @@
+*{
+  padding:0px;
+  margin:0px;
+}
+
+html { 
+  background: url(background.jpg) no-repeat center center fixed; 
+  background-size: cover;
+}
+
+p{
+  font-family:"MS Sans Serif";
+}
+
+button, input{
+    font-family:"MS Sans Serif";
+    outline:1px solid #000000;
+    border-width:1px;
+    border-style:solid;
+    border-color:#FFFFFF #808080 #808080 #FFFFFF;
+    padding: 2px;
+}
+
+button {
+  background:#C0C0C0;
+
+}
+
+input {
+  background: white;
+}
+
+button:active{
+  outline:none;
+}
+
+header{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #64CFF7;
+  flex-wrap: wrap;
+  margin-bottom: 3px;
+}
+
+.main{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 360px
+}
+
+.control-panel{
+  background-color: #FF68A8;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 95%;
+}
+
+.control-panel > * {
+  margin: 5px;
+}
+
+#control-buttons{
+  width: 160px;
+  height: 17px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.music-player{
+ width: 200px; 
+ height: 42px;
+ border-width:1px;
+ border-style:solid;
+ border-color:#FFFFFF #808080 #808080 #FFFFFF;
+ margin-right: 3px;
+ margin-left: 80px;
+}
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
 .item {
-  border: 1px solid black;
+  width:300px;
+  background:#c0c0c0;
+  border-width:1px;
+  border-color:#FFFFFF #808080 #808080 #FFFFFF;
+  border-style:solid;
+  padding:1px;
+  margin: 10px
+}
+
+.item p {
+  margin-left: 4px;
+}
+
+.item-title{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 24px;
+  background:#000080;
+  color:#FFF;
+  font-family:Tahoma;
+  font-weight:bold;
+}
+
+.item-title button {
+  font-weight: bold;
+  font-size: 9px;
+  margin-bottom: 4px;
+  margin-right: 4px;
+}
+
+.item-title .edit-button{
+  font-size: 7.8px;
+}
+
+.edit-item{
+  display: flex;
+  flex-direction: column;
+}
+
+.edit-item p {
+  margin-left: 4px;
+}
+
+.edit-item button {
+  align-self: center;
 }

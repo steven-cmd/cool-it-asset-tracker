@@ -27,10 +27,24 @@ class Item extends Component {
           />
         ) : (
           <div>
-            <button onClick={() => this.props.handleDelete(this.props.item.id)}>
-              delete
-            </button>
-            <p>Asset Tag: {this.props.item.assetTag}</p>
+            <div className="item-title">
+              <p>Asset Tag: {this.props.item.assetTag}</p>
+              <div>
+                <button
+                  className="edit-button"
+                  onClick={() => {
+                    this.handleEdit();
+                  }}
+                >
+                  ✎
+                </button>
+                <button
+                  onClick={() => this.props.handleDelete(this.props.item.id)}
+                >
+                  X
+                </button>
+              </div>
+            </div>
             <p>Location: {this.props.item.location}</p>
             <p>Purchase Date: {this.props.item.purchaseDate}</p>
             <p>Model: {this.props.item.model}</p>
@@ -40,13 +54,6 @@ class Item extends Component {
             <p>Purchase Price: {this.props.item.purchasePrice}</p>
             <p>Type: {this.props.item.type}</p>
             <p>Comments: {this.props.item.comments}</p>
-            <button
-              onClick={() => {
-                this.handleEdit();
-              }}
-            >
-              edit
-            </button>
           </div>
         )}
       </div>
