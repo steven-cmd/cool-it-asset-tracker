@@ -31,16 +31,28 @@ class EditItem extends Component {
   }
 
   render() {
+    const {
+      assetTag,
+      location,
+      purchaseDate,
+      model,
+      serialNumber,
+      user,
+      endOfLife,
+      purchasePrice,
+      type,
+      comments,
+    } = this.state;
     return (
       <div className="edit-item">
         <div className="item-title">
-          <p>Asset Tag: {this.state.assetTag} </p>
+          <p>Asset Tag: {assetTag} </p>
         </div>
         <div>
           <span>Asset Tag: </span>
           <input
             placeholder="Asset Tag"
-            value={this.state.assetTag}
+            value={assetTag}
             name="assetTag"
             onChange={(e) => this.handleChange(e.target.value, e.target.name)}
           ></input>
@@ -49,7 +61,7 @@ class EditItem extends Component {
           <span>Location: </span>
           <input
             placeholder="Location"
-            value={this.state.location}
+            value={location}
             name="location"
             onChange={(e) => this.handleChange(e.target.value, e.target.name)}
           ></input>
@@ -59,7 +71,7 @@ class EditItem extends Component {
           <span>Purchase date: </span>
           <input
             placeholder="Purchase Date"
-            value={this.state.purchaseDate}
+            value={purchaseDate}
             name="purchaseDate"
             onChange={(e) => this.handleChange(e.target.value, e.target.name)}
           ></input>
@@ -69,7 +81,7 @@ class EditItem extends Component {
           <span>Model: </span>
           <input
             placeholder="Model"
-            value={this.state.model}
+            value={model}
             name="model"
             onChange={(e) => this.handleChange(e.target.value, e.target.name)}
           ></input>
@@ -79,7 +91,7 @@ class EditItem extends Component {
           <span>Serial Number: </span>
           <input
             placeholder="Serial Number"
-            value={this.state.serialNumber}
+            value={serialNumber}
             name="serialNumber"
             onChange={(e) => this.handleChange(e.target.value, e.target.name)}
           ></input>
@@ -89,7 +101,7 @@ class EditItem extends Component {
           <span>User: </span>
           <input
             placeholder="User"
-            value={this.state.user}
+            value={user}
             name="user"
             onChange={(e) => this.handleChange(e.target.value, e.target.name)}
           ></input>
@@ -99,7 +111,7 @@ class EditItem extends Component {
           <span>End of Life: </span>
           <input
             placeholder="End of Life"
-            value={this.state.endOfLife}
+            value={endOfLife}
             name="endOfLife"
             onChange={(e) => this.handleChange(e.target.value, e.target.name)}
           ></input>
@@ -109,7 +121,7 @@ class EditItem extends Component {
           <span>Purchase Price: </span>
           <input
             placeholder="Purchase Price"
-            value={this.state.purchasePrice}
+            value={purchasePrice}
             name="purchasePrice"
             onChange={(e) => this.handleChange(e.target.value, e.target.name)}
           ></input>
@@ -119,7 +131,7 @@ class EditItem extends Component {
           <span>Type: </span>
           <input
             placeholder="Type"
-            value={this.state.type}
+            value={type}
             name="type"
             onChange={(e) => this.handleChange(e.target.value, e.target.name)}
           ></input>
@@ -129,7 +141,7 @@ class EditItem extends Component {
           <span>Comments: </span>
           <input
             placeholder="Comments"
-            value={this.state.comments}
+            value={comments}
             name="comments"
             onChange={(e) => this.handleChange(e.target.value, e.target.name)}
           ></input>

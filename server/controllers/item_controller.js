@@ -167,8 +167,8 @@ module.exports = {
       serialNumber,
       comments,
     } = req.body;
-    const itemId = req.params.id;
-    const index = items.findIndex((item) => item.id === +itemId);
+    const { id } = req.params;
+    const index = items.findIndex((item) => item.id === +id);
     if (index === -1) {
       return res.status(500).send("No such item, fool");
     }
@@ -191,8 +191,8 @@ module.exports = {
     res.status(200).send(items);
   },
   delete: (req, res) => {
-    const itemId = req.params.id;
-    const index = items.findIndex((item) => item.id === +itemId);
+    const { id } = req.params;
+    const index = items.findIndex((item) => item.id === +id);
     if (index === -1) {
       return res.status(500).send("No such item, fool");
     }

@@ -17,6 +17,19 @@ class Item extends Component {
   }
 
   render() {
+    const {
+      assetTag,
+      id,
+      location,
+      purchaseDate,
+      model,
+      serialNumber,
+      user,
+      endOfLife,
+      purchasePrice,
+      type,
+      comments,
+    } = this.props.item;
     return (
       <div className="item">
         {this.state.isEditing ? (
@@ -28,7 +41,7 @@ class Item extends Component {
         ) : (
           <div>
             <div className="item-title">
-              <p>Asset Tag: {this.props.item.assetTag}</p>
+              <p>Asset Tag: {assetTag}</p>
               <div className="button-container">
                 <button
                   className="edit-button"
@@ -38,22 +51,18 @@ class Item extends Component {
                 >
                   ✎
                 </button>
-                <button
-                  onClick={() => this.props.handleDelete(this.props.item.id)}
-                >
-                  X
-                </button>
+                <button onClick={() => this.props.handleDelete(id)}>X</button>
               </div>
             </div>
-            <p>Location: {this.props.item.location}</p>
-            <p>Purchase Date: {this.props.item.purchaseDate}</p>
-            <p>Model: {this.props.item.model}</p>
-            <p>Serial Number: {this.props.item.serialNumber}</p>
-            <p>User: {this.props.item.user}</p>
-            <p>End of Life: {this.props.item.endOfLife}</p>
-            <p>Purchase Price: {this.props.item.purchasePrice}</p>
-            <p>Type: {this.props.item.type}</p>
-            <p>Comments: {this.props.item.comments}</p>
+            <p>Location: {location}</p>
+            <p>Purchase Date: {purchaseDate}</p>
+            <p>Model: {model}</p>
+            <p>Serial Number: {serialNumber}</p>
+            <p>User: {user}</p>
+            <p>End of Life: {endOfLife}</p>
+            <p>Purchase Price: {purchasePrice}</p>
+            <p>Type: {type}</p>
+            <p>Comments: {comments}</p>
           </div>
         )}
       </div>

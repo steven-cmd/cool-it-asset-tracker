@@ -1,23 +1,20 @@
-import React, { Component } from "react";
 import Item from "./Item";
 
-class List extends Component {
-  render() {
-    return (
-      <div className="list">
-        {this.props.items.map((item) => {
-          return (
-            <Item
-              key={item.id}
-              item={item}
-              handleDelete={this.props.handleDelete}
-              handleEditItem={this.props.handleEditItem}
-            />
-          );
-        })}
-      </div>
-    );
-  }
+function List(props) {
+  return (
+    <main className="list">
+      {props.items.map((item) => {
+        return (
+          <Item
+            key={item.id}
+            item={item}
+            handleDelete={props.handleDelete}
+            handleEditItem={props.handleEditItem}
+          />
+        );
+      })}
+    </main>
+  );
 }
 
 export default List;

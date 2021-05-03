@@ -41,65 +41,77 @@ class ControlPanel extends Component {
   }
 
   render() {
+    const {
+      assetTag,
+      location,
+      purchaseDate,
+      model,
+      serialNumber,
+      user,
+      endOfLife,
+      purchasePrice,
+      type,
+      comments,
+    } = this.state;
     return (
       <div className="control-panel">
         <input
           placeholder="Asset Tag"
-          value={this.state.assetTag}
+          value={assetTag}
           name="assetTag"
           onChange={(e) => this.handleChange(e.target.value, e.target.name)}
         ></input>
         <input
           placeholder="Location"
-          value={this.state.location}
+          value={location}
           name="location"
           onChange={(e) => this.handleChange(e.target.value, e.target.name)}
         ></input>
         <input
           placeholder="Purchase Date"
-          value={this.state.purchaseDate}
+          value={purchaseDate}
           name="purchaseDate"
           onChange={(e) => this.handleChange(e.target.value, e.target.name)}
         ></input>
         <input
           placeholder="Model"
-          value={this.state.model}
+          value={model}
           name="model"
           onChange={(e) => this.handleChange(e.target.value, e.target.name)}
         ></input>
         <input
           placeholder="Serial Number"
-          value={this.state.serialNumber}
+          value={serialNumber}
           name="serialNumber"
           onChange={(e) => this.handleChange(e.target.value, e.target.name)}
         ></input>
         <input
           placeholder="User"
-          value={this.state.user}
+          value={user}
           name="user"
           onChange={(e) => this.handleChange(e.target.value, e.target.name)}
         ></input>
         <input
           placeholder="End of Life"
-          value={this.state.endOfLife}
+          value={endOfLife}
           name="endOfLife"
           onChange={(e) => this.handleChange(e.target.value, e.target.name)}
         ></input>
         <input
           placeholder="Purchase Price"
-          value={this.state.purchasePrice}
+          value={purchasePrice}
           name="purchasePrice"
           onChange={(e) => this.handleChange(e.target.value, e.target.name)}
         ></input>
         <input
           placeholder="Type"
-          value={this.state.type}
+          value={type}
           name="type"
           onChange={(e) => this.handleChange(e.target.value, e.target.name)}
         ></input>
         <input
           placeholder="Comments"
-          value={this.state.comments}
+          value={comments}
           name="comments"
           onChange={(e) => this.handleChange(e.target.value, e.target.name)}
         ></input>
